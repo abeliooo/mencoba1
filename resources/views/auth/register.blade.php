@@ -29,15 +29,6 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-            <div class="mt-4">
-                <x-label for="type" value="{{ __('User Type') }}" />
-                <select id="type" class="block mt-1 w-full rounded-lg" type="password" name="type">
-                    <option value="" selected disabled hidden>{{ __('Choose User Type') }}</option>
-                    <option value="doctor">Doctor</option>
-                    <option value="user">User</option>
-                </select>
-            </div>
-
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">

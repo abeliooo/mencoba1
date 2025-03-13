@@ -24,7 +24,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             " />
 
-                <x-label for="photo" value="{{ __('Photo') }}" />
+                <x-label for="photo" value="{{ __('Profile Picture') }}" />
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
@@ -57,6 +57,27 @@
             <x-label for="name" value="{{ __('Name') }}" />
             <x-input id="name" type="text" class="mt-1 block w-full" wire:model="state.name" required autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
+        </div>
+
+        <!-- Bio Data -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="bio" value="{{ __('Bio Data') }}" />
+            <textarea class="mt-1 block w-full border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" id="bio" wire:model.defer="state.bio_data" placeholder="Bio Data"></textarea>
+            <x-input-error for="bio" class="mt-2" />
+        </div>
+
+        <!-- Experience -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="experience" value="{{ __('Experience') }}" />
+            <x-input class="mt-1 block w-full border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" id="experience" wire:model.defer="state.experience" type="number" min="0" max="60"></x-input>
+            <x-input-error for="experience" class="mt-2" />
+        </div>
+
+        <!-- Category -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="category" value="{{ __('Category') }}" />
+            <x-input class="mt-1 block w-full border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" id="category" wire:model.defer="state.category" type="text"></x-input>
+            <x-input-error for="category" class="mt-2" />
         </div>
 
         <!-- Email -->
